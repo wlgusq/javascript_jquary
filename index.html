@@ -5,51 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자바스크립트 학습하기</title>
   <style>
-  .java{
-    width: 50%;
-    float: left;
+  body{background: #efefef;}
+  .wrap{
+    width: 80%;
+    display: flex;
+    position: relative;
+    margin: 0px auto;
   }
-  .java > h1{display: none;}
-  .java > dl > dt{
-    font-size: 24px;
+
+  .java, .jquary{width: 40%;}
+  .java{position: absolute; left: 0px;}
+  .jquary{position: absolute; right: 0px;}
+
+  h2{
+    font-size: 30px;
+    text-align: center;
+  }
+  dl{margin-bottom: 50px;}
+  dl > dt{
+    font-size: 21px;
     font-weight: bold;
-    background: orange;
     color: #fff;
     text-indent: 20px;
     line-height: 45px;
+    margin-bottom: 20px
+  }
+  .java dt{background: #EBB723;}
+  .jquary dt{background: #0765A7;}
+  dl > dd{
+    border-bottom: 1px solid #ccc;
+    line-height: 50px;
+    margin-left: 0px;
+  }
+  dl > dd > a{
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  dl > dd > a:hover{
+    font-weight: bold;
+    text-decoration: underline;
   }
   </style>
 </head>
 
 <body>
-  <div class="java">
+  <div class="wrap">
+    <div class="java">
 
-  <h1>자바스크립트 학습하기</h1>
+    <h2>자바스크립트 학습하기</h2>
 
-  <dl>
-    <dt>1일차 학습 - 자바스크립트 기초문법</dt>
-    <dd><a href="./1213/01_java_basic.html" title="자바스크립트 소개와 기초문법">자바스크립트 소개와 기초문법</a></dd>
-    <dd><a href="./1213/02_java_4.html" title="문서출력방법 4가지">문서출력방법 4가지</a></dd>
-    <dd><a href="./1213/03_java_content.html" title="콘텐츠 제작하기 예제">콘텐츠 제작하기 예제</a></dd>
-  </dl>
+    <dl>
+      <dt>1일차 학습 - 자바스크립트 기초문법</dt>
+      <dd><a href="./1213/01_java_basic.html" title="자바스크립트 소개와 기초문법">자바스크립트 소개와 기초문법</a></dd>
+      <dd><a href="./1213/02_java_4.html" title="문서출력방법 4가지">문서출력방법 4가지</a></dd>
+      <dd><a href="./1213/03_java_content.html" title="콘텐츠 제작하기 예제">콘텐츠 제작하기 예제</a></dd>
+    </dl>
 
-  <dl>
-    <dt>2일차 학습 - 변수의 개념과 연산자</dt>
-    <dd><a href="./1214/java_ex.html" title="자바스크립트 실무 활용예제">자바스크립트 실무 활용예제</a></dd>
-  </dl>
+    <dl>
+      <dt>2일차 학습 - 변수의 개념과 연산자</dt>
+      <dd><a href="./1214/java_ex.html" title="자바스크립트 실무 활용예제">자바스크립트 실무 활용예제</a></dd>
+    </dl>
 
-  <dl>
-    <dt>3일차 학습 - 변수 응용</dt>
-    <dd><a href="./1215/java_an_operator.html" title="자바스크립트 연산자">자바스크립트 연산자</a></dd>
-    <dd><a href="./1215/java_variable.html" title="변수의 개념과 활용">변수의 개념과 활용</a></dd>
-  </dl>
-
-
-
+    <dl>
+      <dt>3일차 학습 - 변수 응용</dt>
+      <dd><a href="./1215/java_variable.html" title="변수의 개념과 활용">변수의 개념과 활용</a></dd>
+      <dd><a href="./1215/java_an_operator.html" title="자바스크립트 연산자">자바스크립트 연산자</a></dd>
+    </dl>
 
 
 
 
+
+    </div>
+
+    <div class="jquary">
+    <h2>제이쿼리 학습하기</h2>
+
+    <dl>
+      <dt>1일차 학습</dt>
+    </dl>
+
+
+    </div>
   </div>
   
 </body>
