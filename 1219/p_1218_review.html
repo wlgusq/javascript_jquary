@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제_1218 복습</title>
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css">
+  <style>
+    article *{padding: 0px; margin: 0px;}
+    article{
+      margin: 0px auto;
+      width: 600px;
+      border: 3px solid skyblue;
+      position: relative;
+    }
+    article > h2{
+      /* text-align: center; */
+      text-indent: 10px;
+      padding: 15px;
+    }
+    article .fas{
+      background: rgba(255, 255, 255, .7);
+      padding: 10px 13px;
+      border-radius: 50%;
+      position: absolute;
+      font-size: 20px;
+    }
+    article > p > #left_btn{
+      left: 5px;
+      top: 50%;
+    }
+    article  > p > #right_btn{
+      right: 5px;
+      top: 50%;
+    }
+    article > img{
+      width: 100%;
+    }
+    article #page{
+      position: absolute;
+      bottom: 4px; right: 0px;
+      font-size: 20px; font-weight: bold;
+      background: rgba(255, 255, 255, .7);
+      padding: 5px 15px;
+      /* border-top-left-radius: 20px; */
+    }
+
+  </style>
+</head>
+
+<body>
+  <article>
+    <h2>고객님만을 위한 추천 여행</h2>
+    <p>
+      <span id="page"></span>
+      <span class="fas fa-angle-left" id="left_btn"></span>
+      <span class="fas fa-angle-right" id="right_btn"></span>
+    </p>
+
+    <img src="./img/travel01.jpg" alt="규슈" id="travel">
+  </article>
+
+
+  <script>
+    let n = 1;
+    const l_btn = document.getElementById('left_btn');
+    const r_btn = document.getElementById('right_btn');
+    const page_n = document.getElementById('page');
+
+    page_n.innerHTML = n + '/4';
+
+
+    l_btn.addEventListener('click', function(){
+      if(n==1){
+        n=4;
+      }else{
+        n--;
+      }
+      page_n.innerHTML = n +'/4';
+      document.getElementById('travel').src='./img/travel0'+n+'.jpg';
+    });
+
+    r_btn.addEventListener('click', function(){
+      if(n==4){
+        n=1;
+      }else{
+        n++;
+      }
+      page_n.innerHTML = n +'/4';
+      document.getElementById('travel').src='./img/travel0'+n+'.jpg';
+    });
+
+  </script>
+
+  
+</body>
+</html>
