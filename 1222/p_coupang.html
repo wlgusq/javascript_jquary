@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제_쿠팡 사진 변경하기</title>
+  <style>
+    #cou *{margin: 0px; padding: 0px;}
+    #cou{
+      width: 325px;
+      height: 680px;
+      border: 1px solid #ccc;
+      position: relative;
+      margin: 0px auto;
+    }
+    #cou > img{bottom: 0px; position: absolute;}
+  </style>
+</head>
+<body>
+  <div id="cou">
+      <h2>HOT! TREND</h2>
+      <h3>추천 광고상품</h3>
+      <img src="./images3/product01.png" alt="이미지01" id="cou_img">
+  </div>
+
+
+
+
+  <script>
+    let rand_pro = Math.ceil(Math.random()*5);
+    let jp = new Array('.jpg', '.png');
+
+    document.getElementById('cou_img').src="./images3/product"+rand_pro+jp
+    document.write(jp)
+
+  </script>
+
+  
+</body>
+</html>
