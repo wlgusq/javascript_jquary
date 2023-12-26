@@ -9,9 +9,9 @@
 
   <style>
     h2,p{text-align: center;}
-    h3{color:#F6699E;}
-    #cou *{margin: 0px; padding: 0px;}
-    #cou{
+    h3{color:#F6699E;} h4{color: #555;}
+    .cou_box *{margin: 0px; padding: 0px;}
+    .cou_box{
       width: 325px;
       height: 680px;
       border: 1px solid #ccc;
@@ -20,33 +20,85 @@
       position: relative;
       margin: 0px auto;
     }
-    #cou > img{bottom: 0px; position: absolute;}
-    .fas{
-      font-size: 30px;
-      background: rgb(22, 255, 255, .7);
-      padding: 30px;
+    .cou_box img{
+      bottom: 25px; 
+      position: absolute;
     }
+    .cou_box #page{
+      bottom: 3px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #555;
+      font-weight: bold;
+    }
+    .fas{
+      font-size: 40px;
+      background: rgb(255, 255, 255, .5);
+      position: absolute;
+      top: 50%;
+      z-index: 9000;
+    }
+    .fa-angle-left{left: 0px;}
+    .fa-angle-right{right: 0px;}
   </style>
 </head>
+
 <body>
   <h2>쿠팡 실습예제</h2>
   <p>새로고침 시 이미지 변경 / 좌우버튼 클릭 시 이미지 변경</p>
-  <div id="cou">
-      <h3>HOT! TREND</h3>
-      <h4>추천 광고상품</h4>
-      <img src="./images3/product01.png" alt="이미지01" id="cou_img">
-      <i class="fas fa-angle-left"></i>
-      <i class="fas fa-angle-right"></i>
-  </div>
+  <article class="cou_box">
+    <h3>HOT! TREND</h3>
+    <h4>추천 광고상품</h4>
+      <div id="cou">
+          <i class="fas fa-angle-left" id="left_btn"></i>
+          <i class="fas fa-angle-right" id="right_btn"></i>
+      </div>
+
+    <img src="./images3/product1.jpg" alt="이미지01" id="cou_img">
+    <span id="page"></span>
+  </article>
 
 
 
 
   <script>
-  let picture = [가, 나, 다, 라, 마];
-  let ran_p = Math.floor(Math.random()*5);
+    // 좌우버튼 클릭 시 이미지 변경
+    let n = 1;
+    const l_btn = document.getElementById('left_btn');
+    const r_btn = document.getElementById('right_btn');
+    
+    const page_n = document.getElementById('page');
 
-  document.write(`한국어는 ${picture[ran_p]}이 있다.`);
+
+    page_n.innerHTML = n + '/18';
+
+    l_btn.addEventListener('click', function(){
+      if(n==1){
+        n=18;
+      }else{
+        n--;
+      }
+      page_n.innerHTML = n + '/18';
+      document.getElementById('cou_img').src='./images3/product'+n+'.jpg';
+    });
+
+    r_btn.addEventListener('click', function(){
+      if(n==18){
+        n=1;
+      }else{
+        n++;
+      }
+      page_n.innerHTML = n + '/18';
+      document.getElementById('cou_img').src='./images3/product'+n+'.jpg';
+    });
+
+
+
+    // 새로고침 시 이미지 변경
+    let ran = Math.floor(Math.random()*18+1);
+    
+    document.getElementById('cou_img').src='./images3/product'+ran+'.jpg';
 
 
   </script>
