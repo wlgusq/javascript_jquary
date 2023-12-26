@@ -4,34 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>실습예제_쿠팡 사진 변경하기</title>
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css">
+
   <style>
+    h2,p{text-align: center;}
+    h3{color:#F6699E;}
     #cou *{margin: 0px; padding: 0px;}
     #cou{
       width: 325px;
       height: 680px;
       border: 1px solid #ccc;
+      border-top: 3px solid #F6699E;
+      border-bottom: 3px solid #F6699E;
       position: relative;
       margin: 0px auto;
     }
     #cou > img{bottom: 0px; position: absolute;}
+    .fas{
+      font-size: 30px;
+      background: rgb(22, 255, 255, .7);
+      padding: 30px;
+    }
   </style>
 </head>
 <body>
+  <h2>쿠팡 실습예제</h2>
+  <p>새로고침 시 이미지 변경 / 좌우버튼 클릭 시 이미지 변경</p>
   <div id="cou">
-      <h2>HOT! TREND</h2>
-      <h3>추천 광고상품</h3>
+      <h3>HOT! TREND</h3>
+      <h4>추천 광고상품</h4>
       <img src="./images3/product01.png" alt="이미지01" id="cou_img">
+      <i class="fas fa-angle-left"></i>
+      <i class="fas fa-angle-right"></i>
   </div>
 
 
 
 
   <script>
-    let rand_pro = Math.ceil(Math.random()*5);
-    let jp = new Array('.jpg', '.png');
+  let picture = [가, 나, 다, 라, 마];
+  let ran_p = Math.floor(Math.random()*5);
 
-    document.getElementById('cou_img').src="./images3/product"+rand_pro+jp
-    document.write(jp)
+  document.write(`한국어는 ${picture[ran_p]}이 있다.`);
+
 
   </script>
 
