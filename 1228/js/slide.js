@@ -79,7 +79,11 @@ stop_btn.addEventListener('click', function(){
 });
 
 //play_btn클릭 시 시간을 다시 생성하여 자동으로 움직이게 함
-play_btn.addEventListener('click', function(){
+play_btn.addEventListener('click', function(e){ //e=event객체를 뜻함
+  //기존 자동재생이 되고 있다면 제거하고
+  clearInterval(Timer);
+
+  //3초마다 움직이게 함
     Timer = setInterval(function(){
     console.log('반복호출실행');
     if(count==2){
@@ -90,4 +94,5 @@ play_btn.addEventListener('click', function(){
     mslide(count); //mslide에 count값을 넘겨서 자동으로 움직이게 한다.
     // console.log(count); 
   }, 3000);
+  e.preventDefault();
 });
